@@ -108,6 +108,21 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Backend/src/main/java/com/martymart/repository/CustomerRepository.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Backend/src/main/java/com/martymart/repository/WishlistRepository.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Backend/src/main/java/com/martymart/repository/SubcategoryRepository.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Backend/src/main/java/com/martymart/repository/InventoryRepository.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Backend/src/main/java/com/martymart/repository/OrderRepository.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Backend/src/main/java/com/martymart/repository/CategoryRepository.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Backend/src/main/java/com/martymart/repository/WishlistItemRepository.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Backend/src/main/java/com/martymart/repository/ReviewRepository.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Backend/src/main/java/com/martymart/repository/OrderItemRepository.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Backend/src/main/java/com/martymart/repository/WarehouseRepository.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Backend/src/main/java/com/martymart/repository/ProductRepository.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Backend/src/main/java/com/martymart/repository/MessageRepository.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Backend/src/main/java/com/martymart/repository/UserRepository.java" root0="SKIP_INSPECTION" />
+  </component>
   <component name="JpbToolWindowState">
     <option name="myId2FirstActivated">
       <map>
@@ -142,6 +157,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="jdk.selected.JAVA_MODULE" value="11" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/Backend/src/main/java/com/martymart/repository" />
+    <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
