@@ -26,7 +26,7 @@ import javax.persistence.Id;
 public class Product {
     @Id
     private String product_id;
-    private String category_id;
+    private String parent_category_id;
     private String product_name;
     private String image;
     private String description;
