@@ -17,6 +17,8 @@ import lombok.ToString;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -30,5 +32,6 @@ public class Review {
     private String customer_id;
     private int rating;
     private String review;
-    private String date;
+    private LocalDate review_date;
+    private LocalTime review_time;
 }

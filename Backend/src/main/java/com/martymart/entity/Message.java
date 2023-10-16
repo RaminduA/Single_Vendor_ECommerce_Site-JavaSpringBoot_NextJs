@@ -15,9 +15,11 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
-import org.springframework.data.annotation.Id;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -30,7 +32,6 @@ public class Message {
     private String sender_id;
     private String receiver_id;
     private String message;
-    private String date;
-    private String time;
-    private boolean read;
+    private LocalDate message_date;
+    private LocalTime message_time;
 }

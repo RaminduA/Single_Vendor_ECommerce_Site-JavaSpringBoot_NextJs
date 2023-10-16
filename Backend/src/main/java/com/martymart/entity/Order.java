@@ -16,17 +16,21 @@ import lombok.ToString;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
 @ToString
 @Entity
+@Table(name = "orders")
 public class Order {
     @Id
     private String order_id;
     private String customer_id;
-    private String order_date;
-    private String order_time;
+    private LocalDate order_date;
+    private LocalTime order_time;
     private double total_price;
 }
