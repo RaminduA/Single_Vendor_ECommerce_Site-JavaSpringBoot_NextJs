@@ -2,6 +2,7 @@ package com.martymart.repository;
 
 import com.martymart.entity.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
@@ -9,16 +10,19 @@ import java.util.List;
 
 public interface CustomerRepository extends JpaRepository<Customer, String> {
     @Query(value = "SELECT * FROM customer WHERE customer_id=:id LIMIT 1", nativeQuery = true)
-    Customer getCustomer(String id);
+    Customer getCustomer(@Param("id")String customer_id);
 
-    @Query(value = "INSERT INTO customer VALUES (:#{#customer.customer_id}, :#{#customer.customer_name}, :#{#customer.customer_email}, :#{#customer.customer_password}, :#{#customer.customer_address}, :#{#customer.customer_phone})", nativeQuery = true)
+    @Modifying
+    @Query(value = "INSERT INTO customer (customer_id, first_name, last_name, email, phone_number) VALUES (:#{#customer.customer_id}, :#{#customer.first_name}, :#{#customer.last_name}, :#{#customer.email}, :#{#customer.phone_number})", nativeQuery = true)
     void saveCustomer(@Param("customer")Customer customer);
 
-    @Query(value = "UPDATE customer SET customer_name=:#{#customer.customer_name}, customer_email=:#{#customer.customer_email}, customer_password=:#{#customer.customer_password}, customer_address=:#{#customer.customer_address}, customer_phone=:#{#customer.customer_phone} WHERE customer_id=:#{#customer.customer_id}", nativeQuery = true)
+    @Modifying
+    @Query(value = "UPDATE customer SET first_name=:#{#customer.first_name}, last_name=:#{#customer.last_name}, email=:#{#customer.email}, phone_number=:#{#customer.phone_number} WHERE customer_id=:#{#customer.customer_id}", nativeQuery = true)
     void updateCustomer(@Param("customer")Customer customer);
 
+    @Modifying
     @Query(value = "DELETE FROM customer WHERE customer_id=:id", nativeQuery = true)
-    void deleteCustomer(@Param("id")String id);
+    void deleteCustomer(@Param("id")String customer_id);
 
     @Query(value = "SELECT * FROM customer", nativeQuery = true)
     List<Customer> getAllCustomers();
