@@ -8,23 +8,25 @@ Inventory Table:
 - count (int)
 */
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
+@Getter
+@Setter
 @ToString
 @Entity
 public class Inventory {
     @Id
+    @Column(length = 10)
     private String inventory_id;
-    private String product_id;
-    private String warehouse_id;
+    @JoinColumn(name = "product_id")
+    @ManyToOne(fetch = FetchType.EAGER)
+    private Product product;
+    @JoinColumn(name = "warehouse_id")
+    @ManyToOne(fetch = FetchType.EAGER)
+    private Warehouse warehouse;
     private int count;
 }

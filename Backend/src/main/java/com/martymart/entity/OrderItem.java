@@ -9,24 +9,28 @@ Order_Items Table:
 - price (decimal)
 */
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.math.BigDecimal;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
+@Getter
+@Setter
 @ToString
 @Entity
 public class OrderItem {
     @Id
+    @Column(length = 12)
     private String order_item_id;
-    private String order_id;
-    private String product_id;
+    @JoinColumn(name = "order_id")
+    @ManyToOne(fetch = FetchType.EAGER)
+    private Order order;
+    @JoinColumn(name = "product_id")
+    @ManyToOne(fetch = FetchType.EAGER)
+    private Product product;
     private int quantity;
-    private double price;
+    @Column(precision = 8, scale = 2)
+    private BigDecimal price;
 }

@@ -7,29 +7,33 @@ Reviews Table:
 - customer_id (varchar, foreign key)
 - rating (int)
 - review (varchar)
-- date (date)
+- review_date (date)
+- review_time (time)
 */
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
+@Getter
+@Setter
 @ToString
 @Entity
 public class Review {
     @Id
+    @Column(length = 12)
     private String review_id;
-    private String product_id;
-    private String customer_id;
+    @JoinColumn(name = "product_id")
+    @ManyToOne(fetch = FetchType.EAGER)
+    private Product product;
+    @JoinColumn(name = "customer_id")
+    @ManyToOne(fetch = FetchType.EAGER)
+    private Customer customer;
+    @Column(nullable = false)
     private int rating;
     private String review;
     private LocalDate review_date;

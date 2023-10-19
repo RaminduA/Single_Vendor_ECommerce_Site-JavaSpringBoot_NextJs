@@ -3,30 +3,32 @@ package com.martymart.entity;
 /*
 Users Table:
 - user_id (varchar, primary key)
-- role_id (varchar, foreign key)
+- role (varchar)
 - username (varchar)
 - password (varchar)
 - email (varchar)
 */
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
+@Getter
+@Setter
 @ToString
 @Entity
 public class User {
     @Id
+    @Column(length = 10)
     private String user_id;
-    private String role_id;
+    @Column(nullable = false, length = 10)
+    private String role;
+    @Column(nullable = false, length = 30)
     private String username;
+    @Column(nullable = false, length = 30)
     private String password;
+    @Column(length = 40)
     private String email;
 }

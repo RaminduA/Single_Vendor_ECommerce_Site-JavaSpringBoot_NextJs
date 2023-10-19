@@ -1,9 +1,6 @@
 package com.martymart.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -14,8 +11,8 @@ import java.time.LocalTime;
 @ToString
 public class ReviewDTO {
     private String review_id;
-    private String product_id;
-    private String customer_id;
+    private ProductDTO product;
+    private CustomerDTO customer;
     private int rating;
     private String review;
     private LocalDate review_date;

@@ -6,31 +6,31 @@ Messages Table:
 - sender_id (varchar, foreign key)
 - receiver_id (varchar, foreign key)
 - message (varchar)
-- date (date)
-- time (time)
-- read (boolean)
+- message_date (date)
+- message_time (time)
 */
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
+@Getter
+@Setter
 @ToString
 @Entity
 public class Message {
     @Id
+    @Column(length = 12)
     private String message_id;
+    @Column(nullable = false, length = 8)
     private String sender_id;
+    @Column(nullable = false, length = 8)
     private String receiver_id;
+    @Column(nullable = false)
     private String message;
     private LocalDate message_date;
     private LocalTime message_time;

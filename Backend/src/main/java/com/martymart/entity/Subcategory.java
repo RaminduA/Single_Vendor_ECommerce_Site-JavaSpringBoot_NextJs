@@ -7,22 +7,35 @@ Subcategories Table:
 - parent_category_id (varchar, foreign key)
 */
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
+@Getter
+@Setter
 @ToString
 @Entity
 public class Subcategory {
     @Id
+    @Column(length = 8)
     private String subcategory_id;
+    @Column(nullable = false, length = 20)
     private String subcategory_name;
-    private String parent_category_id;
+    @JoinColumn(name = "parent_category_id")
+    @ManyToOne(fetch = FetchType.EAGER)
+    private Category category;
+    @OneToMany(mappedBy = "subcategory", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
+    @ToString.Exclude
+    private List<Product> products;
+
+    public Subcategory(String subcategory_id, String subcategory_name, Category category) {
+        this.subcategory_id = subcategory_id;
+        this.subcategory_name = subcategory_name;
+        this.category = category;
+        this.products = new ArrayList<Product>();
+    }
 }

@@ -1,9 +1,10 @@
 package com.martymart.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
+
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -11,9 +12,30 @@ import lombok.ToString;
 @ToString
 public class ProductDTO {
     private String product_id;
-    private String parent_category_id;
+    private SubcategoryDTO subcategory;
     private String product_name;
     private String image;
     private String description;
-    private double price;
+    private BigDecimal price;
+    @ToString.Exclude
+    private List<OrderItemDTO> orderItems;
+    @ToString.Exclude
+    private List<WishlistItemDTO> wishlistItems;
+    @ToString.Exclude
+    private List<InventoryDTO> inventories;
+    @ToString.Exclude
+    private List<ReviewDTO> reviews;
+
+    public ProductDTO(String product_id, SubcategoryDTO subcategory, String product_name, String image, String description, BigDecimal price) {
+        this.product_id = product_id;
+        this.subcategory = subcategory;
+        this.product_name = product_name;
+        this.image = image;
+        this.description = description;
+        this.price = price;
+        this.orderItems = new ArrayList<OrderItemDTO>();
+        this.wishlistItems = new ArrayList<WishlistItemDTO>();
+        this.inventories = new ArrayList<InventoryDTO>();
+        this.reviews = new ArrayList<ReviewDTO>();
+    }
 }

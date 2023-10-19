@@ -1,9 +1,8 @@
 package com.martymart.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
+
+import java.math.BigDecimal;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -11,8 +10,8 @@ import lombok.ToString;
 @ToString
 public class WishlistItemDTO {
     private String wishlist_item_id;
-    private String wishlist_id;
-    private String product_id;
+    private WishlistDTO wishlist;
+    private ProductDTO product;
     private int quantity;
-    private double price;
+    private BigDecimal price;
 }
