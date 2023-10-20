@@ -6,7 +6,12 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
+import java.util.List;
+
 public interface ProductRepository extends JpaRepository<Product, String> {
+    @Query(value = "SELECT product_id FROM product ORDER BY product_id DESC LIMIT 1", nativeQuery = true)
+    String getLastId();
+
     @Query(value = "SELECT * FROM product WHERE product_id=:id LIMIT 1", nativeQuery = true)
     Product getProduct(@Param("id")String product_id);
 
@@ -23,5 +28,5 @@ public interface ProductRepository extends JpaRepository<Product, String> {
     void deleteProduct(@Param("id")String product_id);
 
     @Query(value = "SELECT * FROM product WHERE parent_category_id=:id", nativeQuery = true)
-    Product[] getAllByParentCategory(@Param("id")String parent_category_id);
+    List<Product> getAllProductsByParentCategory(@Param("id")String parent_category_id);
 }

@@ -9,6 +9,9 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface WishlistItemRepository extends JpaRepository<WishlistItem, String> {
+    @Query(value = "SELECT wishlist_item_id FROM wishlist_item ORDER BY wishlist_item_id DESC LIMIT 1", nativeQuery = true)
+    String getLastId();
+
     @Query(value = "SELECT * FROM wishlist_item WHERE wishlist_item_id=:id LIMIT 1", nativeQuery = true)
     WishlistItem getWishlistItem(@Param("id")String wishlist_item_id);
 
@@ -25,5 +28,5 @@ public interface WishlistItemRepository extends JpaRepository<WishlistItem, Stri
     void deleteWishlistItem(@Param("id")String wishlist_item_id);
 
     @Query(value = "SELECT * FROM wishlist_item WHERE wishlist_id=:id", nativeQuery = true)
-    List<WishlistItem> getAllByWishlist(@Param("id")String wishlist_id);
+    List<WishlistItem> getAllWishlistItemsByWishlist(@Param("id")String wishlist_id);
 }

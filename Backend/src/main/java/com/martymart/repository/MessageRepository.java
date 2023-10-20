@@ -6,7 +6,12 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
+import java.util.List;
+
 public interface MessageRepository extends JpaRepository<Message, String> {
+    @Query(value = "SELECT message_id FROM message ORDER BY message_id DESC LIMIT 1", nativeQuery = true)
+    String getLastId();
+
     @Query(value = "SELECT * FROM message WHERE message_id=:id LIMIT 1", nativeQuery = true)
     Message getMessage(@Param("id")String message_id);
 
@@ -23,8 +28,8 @@ public interface MessageRepository extends JpaRepository<Message, String> {
     void deleteMessage(@Param("id")String message_id);
 
     @Query(value = "SELECT * FROM message WHERE sender_id=:id", nativeQuery = true)
-    Message getAllMessagesBySender(@Param("id")String sender_id);
+    List<Message> getAllMessagesBySender(@Param("id")String sender_id);
 
     @Query(value = "SELECT * FROM message WHERE receiver_id=:id", nativeQuery = true)
-    Message getAllMessagesByReceiver(@Param("id")String receiver_id);
+    List<Message> getAllMessagesByReceiver(@Param("id")String receiver_id);
 }

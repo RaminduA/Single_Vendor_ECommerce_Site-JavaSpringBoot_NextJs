@@ -9,6 +9,9 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface ReviewRepository extends JpaRepository<Review, String> {
+    @Query(value = "SELECT review_id FROM review ORDER BY review_id DESC LIMIT 1", nativeQuery = true)
+    String getLastId();
+
     @Query(value = "SELECT * FROM review WHERE review_id=:id LIMIT 1", nativeQuery = true)
     Review getReview(@Param("id")String review_id);
 
@@ -25,8 +28,8 @@ public interface ReviewRepository extends JpaRepository<Review, String> {
     void deleteReview(@Param("id")String review_id);
 
     @Query(value = "SELECT * FROM review WHERE product_id=:id", nativeQuery = true)
-    List<Review> getAllByProduct(@Param("id")String product_id);
+    List<Review> getAllReviewsByProduct(@Param("id")String product_id);
 
     @Query(value = "SELECT * FROM review WHERE customer_id=:id", nativeQuery = true)
-    List<Review> getAllByCustomer(@Param("id")String customer_id);
+    List<Review> getAllReviewsByCustomer(@Param("id")String customer_id);
 }

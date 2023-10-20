@@ -9,6 +9,9 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface OrderItemRepository extends JpaRepository<OrderItem, String> {
+    @Query(value = "SELECT order_item_id FROM order_item ORDER BY order_item_id DESC LIMIT 1", nativeQuery = true)
+    String getLastId();
+
     @Query(value = "SELECT * FROM order_item WHERE order_item_id=:id LIMIT 1", nativeQuery = true)
     OrderItem getOrderItem(@Param("id")String order_item_id);
 
@@ -25,5 +28,5 @@ public interface OrderItemRepository extends JpaRepository<OrderItem, String> {
     void deleteOrderItem(@Param("id")String order_item_id);
 
     @Query(value = "SELECT * FROM order_item WHERE order_id=:id", nativeQuery = true)
-    List<OrderItem> getOrderItemByOrderId(@Param("id")String order_id);
+    List<OrderItem> getAllOrderItemsByOrder(@Param("id")String order_id);
 }

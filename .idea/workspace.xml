@@ -5,28 +5,45 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a88e1ce3-ca75-4b2b-8af2-aee897a738c0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/controller/ProductsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/entity/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/entity/Category.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/entity/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/entity/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/entity/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/entity/Inventory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/entity/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/entity/Message.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/entity/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/entity/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/entity/OrderItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/entity/OrderItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/entity/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/entity/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/entity/Review.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/entity/Review.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/entity/Subcategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/entity/Subcategory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/entity/Warehouse.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/entity/Warehouse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/entity/Wishlist.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/entity/Wishlist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/entity/WishlistItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/entity/WishlistItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Backend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/Backend.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/repository/CategoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/repository/CategoryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/repository/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/repository/CustomerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/repository/InventoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/repository/InventoryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/repository/MessageRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/repository/MessageRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/repository/OrderItemRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/repository/OrderItemRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/repository/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/repository/OrderRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/repository/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/repository/ProductRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/repository/ReviewRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/repository/ReviewRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/repository/SubcategoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/repository/SubcategoryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/repository/WarehouseRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/repository/WarehouseRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/repository/WishlistItemRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/repository/WishlistItemRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/repository/WishlistRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/repository/WishlistRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Backend/src/main/java/com/martymart/entity/WishlistItem.java" root0="SKIP_INSPECTION" />
@@ -89,13 +106,15 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -120,7 +139,8 @@
       <updated>1697435187736</updated>
       <workItem from="1697435188998" duration="9285000" />
       <workItem from="1697457035701" duration="39217000" />
-      <workItem from="1697726260029" duration="3673000" />
+      <workItem from="1697726260029" duration="13798000" />
+      <workItem from="1697810834676" duration="5578000" />
     </task>
     <servers />
   </component>

@@ -9,6 +9,9 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface WarehouseRepository extends JpaRepository<Warehouse, String> {
+    @Query(value = "SELECT warehouse_id FROM warehouse ORDER BY warehouse_id DESC LIMIT 1", nativeQuery = true)
+    String getLastId();
+
     @Query(value = "SELECT * FROM warehouse WHERE warehouse_id=:id LIMIT 1", nativeQuery = true)
     Warehouse getWarehouse(@Param("id")String warehouse_id);
 

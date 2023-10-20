@@ -9,6 +9,9 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface SubcategoryRepository extends JpaRepository<Subcategory, String> {
+    @Query(value = "SELECT subcategory_id FROM subcategory ORDER BY subcategory_id DESC LIMIT 1", nativeQuery = true)
+    String getLastId();
+
     @Query(value = "SELECT * FROM subcategory WHERE subcategory_id=:id", nativeQuery = true)
     Subcategory getSubcategory(@Param("id")String subcategory_id);
 
@@ -25,6 +28,5 @@ public interface SubcategoryRepository extends JpaRepository<Subcategory, String
     void deleteSubcategory(@Param("id")String subcategory_id);
 
     @Query(value = "SELECT * FROM subcategory WHERE parent_category_id=:id", nativeQuery = true)
-    List<Subcategory> getAllByParentCategory(@Param("id")String parent_category_id);
-
+    List<Subcategory> getAllSubcategoriesByParentCategory(@Param("id")String parent_category_id);
 }

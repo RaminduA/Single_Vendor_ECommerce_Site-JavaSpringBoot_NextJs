@@ -9,6 +9,9 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface InventoryRepository extends JpaRepository<Inventory, String> {
+    @Query(value = "SELECT inventory_id FROM inventory ORDER BY inventory_id DESC LIMIT 1", nativeQuery = true)
+    String getLastId();
+
     @Query(value = "SELECT * FROM inventory WHERE inventory_id=:id LIMIT 1", nativeQuery = true)
     Inventory getInventory(@Param("id")String inventory_id);
 

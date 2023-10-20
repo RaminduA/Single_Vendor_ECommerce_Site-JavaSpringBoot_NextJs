@@ -9,6 +9,9 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface OrderRepository extends JpaRepository<Order, String> {
+    @Query(value = "SELECT order_id FROM orders ORDER BY order_id DESC LIMIT 1", nativeQuery = true)
+    String getLastId();
+
     @Query(value = "SELECT * FROM orders WHERE order_id=:id LIMIT 1", nativeQuery = true)
     Order getOrder(@Param("id")String order_id);
 

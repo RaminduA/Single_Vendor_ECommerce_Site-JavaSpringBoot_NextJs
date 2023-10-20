@@ -9,6 +9,9 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface CategoryRepository extends JpaRepository<Category, String>{
+    @Query(value = "SELECT category_id FROM category ORDER BY category_id DESC LIMIT 1", nativeQuery = true)
+    String getLastId();
+
     @Query(value = "SELECT * FROM category WHERE category_id=:id LIMIT 1", nativeQuery = true)
     Category getCategory(@Param("id")String category_id);
 
