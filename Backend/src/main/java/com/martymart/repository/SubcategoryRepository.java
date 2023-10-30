@@ -16,11 +16,11 @@ public interface SubcategoryRepository extends JpaRepository<Subcategory, String
     Subcategory getSubcategory(@Param("id")String subcategory_id);
 
     @Modifying
-    @Query(value = "INSERT INTO subcategory (subcategory_id, subcategory_name, parent_category_id) VALUES (:#{#subcategory.subcategory_id}, :#{#subcategory.subcategory_name}, :#{#subcategory.parent_category_id})", nativeQuery = true)
+    @Query(value = "INSERT INTO subcategory (subcategory_id, subcategory_name, parent_category_id) VALUES (:#{#subcategory.subcategory_id}, :#{#subcategory.subcategory_name}, :#{#subcategory.category.category_id})", nativeQuery = true)
     void saveSubcategory(@Param("subcategory")Subcategory subcategory);
 
     @Modifying
-    @Query(value = "UPDATE subcategory SET subcategory_name=:#{#subcategory.subcategory_name}, parent_category_id=:#{#subcategory.parent_category_id} WHERE subcategory_id=:#{#subcategory.subcategory_id}", nativeQuery = true)
+    @Query(value = "UPDATE subcategory SET subcategory_name=:#{#subcategory.subcategory_name}, parent_category_id=:#{#subcategory.category.category_id} WHERE subcategory_id=:#{#subcategory.subcategory_id}", nativeQuery = true)
     void updateSubcategory(@Param("subcategory")Subcategory subcategory);
 
     @Modifying

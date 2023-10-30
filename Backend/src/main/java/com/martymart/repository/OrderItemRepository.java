@@ -16,11 +16,11 @@ public interface OrderItemRepository extends JpaRepository<OrderItem, String> {
     OrderItem getOrderItem(@Param("id")String order_item_id);
 
     @Modifying
-    @Query(value = "INSERT INTO order_item (order_item_id, order_id, product_id, quantity, price) VALUES (:#{#order_item.order_item_id}, :#{#order_item.order_id}, :#{#order_item.product_id}, :#{#order_item.quantity}, :#{#order_item.price})", nativeQuery = true)
+    @Query(value = "INSERT INTO order_item (order_item_id, order_id, product_id, quantity, price) VALUES (:#{#order_item.order_item_id}, :#{#order_item.order.order_id}, :#{#order_item.product.product_id}, :#{#order_item.quantity}, :#{#order_item.price})", nativeQuery = true)
     void saveOrderItem(@Param("order_item")OrderItem order_item);
 
     @Modifying
-    @Query(value = "UPDATE order_item SET order_id=:#{#order_item.order_id}, product_id=:#{#order_item.product_id}, quantity=:#{#order_item.quantity}, price=:#{#order_item.price} WHERE order_item_id=:#{#order_item.order_item_id}", nativeQuery = true)
+    @Query(value = "UPDATE order_item SET order_id=:#{#order_item.order.order_id}, product_id=:#{#order_item.product.product_id}, quantity=:#{#order_item.quantity}, price=:#{#order_item.price} WHERE order_item_id=:#{#order_item.order_item_id}", nativeQuery = true)
     void updateOrderItem(@Param("order_item")OrderItem order_item);
 
     @Modifying

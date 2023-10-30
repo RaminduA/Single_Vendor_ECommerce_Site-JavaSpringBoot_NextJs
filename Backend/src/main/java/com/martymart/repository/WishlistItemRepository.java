@@ -16,11 +16,11 @@ public interface WishlistItemRepository extends JpaRepository<WishlistItem, Stri
     WishlistItem getWishlistItem(@Param("id")String wishlist_item_id);
 
     @Modifying
-    @Query(value = "INSERT INTO wishlist_item (wishlist_item_id, wishlist_id, product_id, quantity, price) VALUES (:#{#wishlistItem.wishlist_item_id}, :#{#wishlistItem.wishlist_id}, :#{#wishlistItem.product_id}, :#{#wishlistItem.quantity}, :#{#wishlistItem.price})", nativeQuery = true)
+    @Query(value = "INSERT INTO wishlist_item (wishlist_item_id, wishlist_id, product_id, quantity, price) VALUES (:#{#wishlistItem.wishlist_item_id}, :#{#wishlistItem.wishlist.wishlist_id}, :#{#wishlistItem.product.product_id}, :#{#wishlistItem.quantity}, :#{#wishlistItem.price})", nativeQuery = true)
     void saveWishlistItem(@Param("wishlistItem")WishlistItem wishlistItem);
 
     @Modifying
-    @Query(value = "UPDATE wishlist_item SET wishlist_id=:#{#wishlistItem.wishlist_id}, product_id=:#{#wishlistItem.product_id}, quantity=:#{#wishlistItem.quantity}, price=:#{#wishlistItem.price} WHERE wishlist_item_id=:#{#wishlistItem.wishlist_item_id}", nativeQuery = true)
+    @Query(value = "UPDATE wishlist_item SET wishlist_id=:#{#wishlistItem.wishlist.wishlist_id}, product_id=:#{#wishlistItem.product.product_id}, quantity=:#{#wishlistItem.quantity}, price=:#{#wishlistItem.price} WHERE wishlist_item_id=:#{#wishlistItem.wishlist_item_id}", nativeQuery = true)
     void updateWishlistItem(@Param("wishlistItem")WishlistItem wishlistItem);
 
     @Modifying

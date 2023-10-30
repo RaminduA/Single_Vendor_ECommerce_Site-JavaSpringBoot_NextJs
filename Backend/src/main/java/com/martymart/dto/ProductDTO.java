@@ -20,6 +20,8 @@ public class ProductDTO {
     @ToString.Exclude
     private List<OrderItemDTO> orderItems;
     @ToString.Exclude
+    private List<CartItemDTO> cartItems;
+    @ToString.Exclude
     private List<WishlistItemDTO> wishlistItems;
     @ToString.Exclude
     private List<InventoryDTO> inventories;
@@ -34,6 +36,7 @@ public class ProductDTO {
         this.description = description;
         this.price = price;
         this.orderItems = new ArrayList<OrderItemDTO>();
+        this.cartItems = new ArrayList<CartItemDTO>();
         this.wishlistItems = new ArrayList<WishlistItemDTO>();
         this.inventories = new ArrayList<InventoryDTO>();
         this.reviews = new ArrayList<ReviewDTO>();

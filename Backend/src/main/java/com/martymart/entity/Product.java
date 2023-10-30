@@ -40,6 +40,9 @@ public class Product {
     @OneToMany(mappedBy = "product", fetch = FetchType.LAZY)
     @ToString.Exclude
     private List<OrderItem> orderItems;
+    @OneToMany(mappedBy = "product", fetch = FetchType.LAZY)
+    @ToString.Exclude
+    private List<CartItem> cartItems;
     @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
     @ToString.Exclude
     private List<WishlistItem> wishlistItems;
@@ -58,6 +61,7 @@ public class Product {
         this.description = description;
         this.price = price;
         this.orderItems = new ArrayList<OrderItem>();
+        this.cartItems = new ArrayList<CartItem>();
         this.wishlistItems = new ArrayList<WishlistItem>();
         this.inventories = new ArrayList<Inventory>();
         this.reviews = new ArrayList<Review>();

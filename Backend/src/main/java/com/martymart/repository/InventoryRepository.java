@@ -16,11 +16,11 @@ public interface InventoryRepository extends JpaRepository<Inventory, String> {
     Inventory getInventory(@Param("id")String inventory_id);
 
     @Modifying
-    @Query(value = "INSERT INTO inventory (inventory_id, product_id, warehouse_id, count) VALUES (:#{#inventory.inventory_id}, :#{#inventory.product_id}, :#{#inventory.warehouse_id}, :#{#inventory.count})", nativeQuery = true)
+    @Query(value = "INSERT INTO inventory (inventory_id, product_id, warehouse_id, count) VALUES (:#{#inventory.inventory_id}, :#{#inventory.product.product_id}, :#{#inventory.warehouse.warehouse_id}, :#{#inventory.count})", nativeQuery = true)
     void saveInventory(@Param("inventory")Inventory inventory);
 
     @Modifying
-    @Query(value = "UPDATE inventory SET product_id=:#{#inventory.product_id}, warehouse_id=:#{#inventory.warehouse_id}, count=:#{#inventory.count} WHERE inventory_id=:#{#inventory.inventory_id}", nativeQuery = true)
+    @Query(value = "UPDATE inventory SET product_id=:#{#inventory.product.product_id}, warehouse_id=:#{#inventory.warehouse.warehouse_id}, count=:#{#inventory.count} WHERE inventory_id=:#{#inventory.inventory_id}", nativeQuery = true)
     void updateInventory(@Param("inventory")Inventory inventory);
 
     @Modifying

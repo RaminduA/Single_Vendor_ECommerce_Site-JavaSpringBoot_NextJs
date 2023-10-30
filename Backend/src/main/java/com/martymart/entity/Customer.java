@@ -33,6 +33,9 @@ public class Customer {
     private String email;
     @Column(length = 15)
     private String phone_number;
+    @OneToOne(mappedBy = "customer", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
+    @ToString.Exclude
+    private Cart cart;
     @OneToMany(mappedBy = "customer", fetch = FetchType.LAZY)
     @ToString.Exclude
     private List<Order> orders;
@@ -49,6 +52,7 @@ public class Customer {
         this.last_name = last_name;
         this.email = email;
         this.phone_number = phone_number;
+        this.cart = new Cart();
         this.orders = new ArrayList<Order>();
         this.wishlists = new ArrayList<Wishlist>();
         this.reviews = new ArrayList<Review>();

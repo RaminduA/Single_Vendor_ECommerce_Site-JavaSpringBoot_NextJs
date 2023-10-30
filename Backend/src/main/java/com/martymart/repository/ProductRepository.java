@@ -16,11 +16,11 @@ public interface ProductRepository extends JpaRepository<Product, String> {
     Product getProduct(@Param("id")String product_id);
 
     @Modifying
-    @Query(value = "INSERT INTO product (product_id, parent_category_id, product_name, image, description, price) VALUES (:#{#product.product_id}, :#{#product.parent_category_id}, :#{#product.product_name}, :#{#product.image}, :#{#product.description}, :#{#product.price})", nativeQuery = true)
+    @Query(value = "INSERT INTO product (product_id, parent_category_id, product_name, image, description, price) VALUES (:#{#product.product_id}, :#{#product.subcategory.subcategory_id}, :#{#product.product_name}, :#{#product.image}, :#{#product.description}, :#{#product.price})", nativeQuery = true)
     void saveProduct(@Param("product")Product product);
 
     @Modifying
-    @Query(value = "UPDATE product SET parent_category_id=:#{#product.parent_category_id}, product_name=:#{#product.product_name}, image=:#{#product.image}, description=:#{#product.description}, price=:#{#product.price} WHERE product_id=:#{#product.product_id}", nativeQuery = true)
+    @Query(value = "UPDATE product SET parent_category_id=:#{#product.subcategory.subcategory_id}, product_name=:#{#product.product_name}, image=:#{#product.image}, description=:#{#product.description}, price=:#{#product.price} WHERE product_id=:#{#product.product_id}", nativeQuery = true)
     void updateProduct(@Param("product")Product product);
 
     @Modifying
@@ -29,4 +29,10 @@ public interface ProductRepository extends JpaRepository<Product, String> {
 
     @Query(value = "SELECT * FROM product WHERE parent_category_id=:id", nativeQuery = true)
     List<Product> getAllProductsByParentCategory(@Param("id")String parent_category_id);
+
+    @Query(value = "SELECT p.* FROM products p INNER JOIN subcategories s ON p.parent_category_id = s.subcategory_id INNER JOIN categories c ON s.parent_category_id = c.category_id WHERE c.category_id=:id", nativeQuery = true)
+    List<Product> getAllProductsBySuperCategory(@Param("id")String super_category_id);
+
+    @Query(value = "SELECT * FROM product", nativeQuery = true)
+    List<Product> getAllProducts();
 }

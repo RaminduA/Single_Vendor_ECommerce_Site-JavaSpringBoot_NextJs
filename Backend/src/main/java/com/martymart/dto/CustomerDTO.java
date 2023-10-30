@@ -16,6 +16,8 @@ public class CustomerDTO {
     private String email;
     private String phone_number;
     @ToString.Exclude
+    private CartDTO cart;
+    @ToString.Exclude
     private List<OrderDTO> orders;
     @ToString.Exclude
     private List<WishlistDTO> wishlists;
@@ -28,6 +30,7 @@ public class CustomerDTO {
         this.last_name = last_name;
         this.email = email;
         this.phone_number = phone_number;
+        this.cart = new CartDTO();
         this.orders = new ArrayList<OrderDTO>();
         this.wishlists = new ArrayList<WishlistDTO>();
         this.reviews = new ArrayList<ReviewDTO>();

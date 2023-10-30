@@ -25,9 +25,9 @@ public class User {
     private String user_id;
     @Column(nullable = false, length = 10)
     private String role;
-    @Column(nullable = false, length = 30)
+    @Column(nullable = false)
     private String username;
-    @Column(nullable = false, length = 30)
+    @Column(nullable = false)
     private String password;
     @Column(length = 40)
     private String email;

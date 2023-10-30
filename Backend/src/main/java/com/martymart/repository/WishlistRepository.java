@@ -16,11 +16,11 @@ public interface WishlistRepository extends JpaRepository<Wishlist, String> {
     Wishlist getWishlist(@Param("id")String wishlist_id);
 
     @Modifying
-    @Query(value = "INSERT INTO wishlist (wishlist_id, customer_id, price) VALUES (:#{#wishlist.wishlist_id}, :#{#wishlist.customer_id}, :#{#wishlist.price})", nativeQuery = true)
+    @Query(value = "INSERT INTO wishlist (wishlist_id, customer_id, price) VALUES (:#{#wishlist.wishlist_id}, :#{#wishlist.customer.customer_id}, :#{#wishlist.price})", nativeQuery = true)
     void addWishlist(@Param("wishlist")Wishlist wishlist);
 
     @Modifying
-    @Query(value = "UPDATE wishlist SET customer_id=:#{#wishlist.customer_id}, price=:#{#wishlist.price} WHERE wishlist_id=:#{#wishlist.wishlist_id}", nativeQuery = true)
+    @Query(value = "UPDATE wishlist SET customer_id=:#{#wishlist.customer.customer_id}, price=:#{#wishlist.price} WHERE wishlist_id=:#{#wishlist.wishlist_id}", nativeQuery = true)
     void updateWishlist(@Param("wishlist")Wishlist wishlist);
 
     @Modifying
