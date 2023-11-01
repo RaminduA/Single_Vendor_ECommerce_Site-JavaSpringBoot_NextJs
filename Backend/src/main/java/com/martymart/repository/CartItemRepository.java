@@ -29,4 +29,7 @@ public interface CartItemRepository extends JpaRepository<CartItem, String> {
 
     @Query(value = "SELECT * FROM cart_item WHERE cart_id=:id", nativeQuery = true)
     List<CartItem> getAllCartItemsByCart(@Param("id")String cart_id);
+
+    @Query(value = "SELECT COUNT(*)>0 FROM cart_item WHERE cart_item_id=:id", nativeQuery = true)
+    Boolean isCartItemExists(@Param("id")String cart_item_id);
 }

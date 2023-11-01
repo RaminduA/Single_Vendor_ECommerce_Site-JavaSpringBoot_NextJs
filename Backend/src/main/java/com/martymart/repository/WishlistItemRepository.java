@@ -29,4 +29,7 @@ public interface WishlistItemRepository extends JpaRepository<WishlistItem, Stri
 
     @Query(value = "SELECT * FROM wishlist_item WHERE wishlist_id=:id", nativeQuery = true)
     List<WishlistItem> getAllWishlistItemsByWishlist(@Param("id")String wishlist_id);
+
+    @Query(value = "SELECT COUNT(*)>0 FROM wishlist_item WHERE wishlist_item_id=:id", nativeQuery = true)
+    Boolean isWishlistItemExists(@Param("id")String wishlist_item_id);
 }

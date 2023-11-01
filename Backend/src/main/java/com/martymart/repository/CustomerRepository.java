@@ -29,4 +29,7 @@ public interface CustomerRepository extends JpaRepository<Customer, String> {
 
     @Query(value = "SELECT * FROM customer", nativeQuery = true)
     List<Customer> getAllCustomers();
+
+    @Query(value = "SELECT COUNT(*)>0 FROM customer WHERE customer_id=:id", nativeQuery = true)
+    Boolean isCustomerExists(@Param("id")String customer_id);
 }

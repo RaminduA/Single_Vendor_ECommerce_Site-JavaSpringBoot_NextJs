@@ -29,4 +29,7 @@ public interface WarehouseRepository extends JpaRepository<Warehouse, String> {
 
     @Query(value = "SELECT * FROM warehouse", nativeQuery = true)
     List<Warehouse> getAllWarehouses();
+
+    @Query(value = "SELECT COUNT(*)>0 FROM warehouse WHERE warehouse_id=:id", nativeQuery = true)
+    Boolean isWarehouseExists(@Param("id")String warehouse_id);
 }

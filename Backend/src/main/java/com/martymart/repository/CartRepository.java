@@ -27,4 +27,7 @@ public interface CartRepository extends JpaRepository<Cart, String> {
 
     @Query(value = "SELECT * FROM cart WHERE customer_id=:id LIMIT 1", nativeQuery = true)
     Cart getCartByCustomer(@Param("id")String customer_id);
+
+    @Query(value = "SELECT COUNT(*)>0 FROM cart_item WHERE cart_id=:id", nativeQuery = true)
+    Boolean isCartExists(@Param("id")String cart_id);
 }

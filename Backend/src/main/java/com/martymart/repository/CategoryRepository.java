@@ -29,4 +29,7 @@ public interface CategoryRepository extends JpaRepository<Category, String>{
 
     @Query(value = "SELECT * FROM category", nativeQuery = true)
     List<Category> getAllCategories();
+
+    @Query(value = "SELECT COUNT(*)>0 FROM category WHERE category_id=:id", nativeQuery = true)
+    Boolean isCategoryExists(@Param("id")String category_id);
 }

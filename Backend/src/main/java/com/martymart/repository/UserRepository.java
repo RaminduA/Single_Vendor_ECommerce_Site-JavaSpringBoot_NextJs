@@ -32,4 +32,10 @@ public interface UserRepository extends JpaRepository<User, String> {
 
     @Query(value = "SELECT * FROM user", nativeQuery = true)
     List<User> getAllUsers();
+
+    @Query(value = "SELECT COUNT(*)>0 FROM user WHERE user_id=:id", nativeQuery = true)
+    Boolean isUserExists(@Param("id")String user_id);
+
+    @Query(value = "SELECT COUNT(*)>0 FROM user WHERE username=:username AND password=:password", nativeQuery = true)
+    Boolean isUserExists(@Param("username")String username, @Param("password")String password);
 }
