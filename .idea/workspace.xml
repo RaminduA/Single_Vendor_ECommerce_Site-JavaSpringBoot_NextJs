@@ -6,20 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="a88e1ce3-ca75-4b2b-8af2-aee897a738c0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/dto/CustomerDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/dto/CustomerDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/dto/ProductDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/dto/ProductDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/entity/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/entity/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/entity/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/entity/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/repository/InventoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/repository/InventoryRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/repository/OrderItemRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/repository/OrderItemRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/repository/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/repository/OrderRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/repository/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/repository/ProductRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/repository/ReviewRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/repository/ReviewRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/repository/SubcategoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/repository/SubcategoryRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/repository/WishlistItemRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/repository/WishlistItemRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/repository/WishlistRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/repository/WishlistRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/controller/CartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/controller/CartController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/service/CartService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/service/CartService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/service/impl/CartServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/service/impl/CartServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/service/impl/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/service/impl/ProductServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/service/impl/ShopServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/martymart/service/impl/ShopServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,9 +40,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Backend/src/main/java/com/martymart/entity/WishlistItem.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/Backend/src/main/java/com/martymart/repository/UtilRepository.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Backend/src/main/java/com/martymart/entity/Cart.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/Backend/src/main/java/com/martymart/repository/ViewRepository.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Backend/src/main/java/com/martymart/entity/CartItem.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Backend/src/main/java/com/martymart/repository/CustomerRepository.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Backend/src/main/java/com/martymart/repository/WishlistRepository.java" root0="SKIP_INSPECTION" />
@@ -108,6 +98,9 @@
     <property name="jdk.selected.JAVA_MODULE" value="11" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/Backend/src/main/java/com/martymart/dto" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -119,6 +112,7 @@
       <recent name="C:\Users\RAMINDU\Desktop\3rd sem\CS3043 - Database Systems\01 - Introduction\Group Projects\Final Project\New\MARTY Mart\Backend\src\main\java\com\martymart" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.martymart.util" />
       <recent name="com.martymart.view" />
     </key>
   </component>
@@ -156,7 +150,9 @@
       <workItem from="1697457035701" duration="39217000" />
       <workItem from="1697726260029" duration="13798000" />
       <workItem from="1697810834676" duration="22387000" />
-      <workItem from="1698135575599" duration="60097000" />
+      <workItem from="1698135575599" duration="76693000" />
+      <workItem from="1698733854428" duration="14596000" />
+      <workItem from="1698823791792" duration="12296000" />
     </task>
     <servers />
   </component>
