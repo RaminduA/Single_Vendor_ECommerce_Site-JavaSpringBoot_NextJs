@@ -29,4 +29,7 @@ public interface SubcategoryRepository extends JpaRepository<Subcategory, String
 
     @Query(value = "SELECT * FROM subcategory WHERE parent_category_id=:id", nativeQuery = true)
     List<Subcategory> getAllSubcategoriesByParentCategory(@Param("id")String parent_category_id);
+
+    @Query(value = "SELECT COUNT(*)>0 FROM subcategory WHERE subcategory_id=:id", nativeQuery = true)
+    Boolean isSubcategoryExists(@Param("id")String subcategory_id);
 }

@@ -32,4 +32,7 @@ public interface ReviewRepository extends JpaRepository<Review, String> {
 
     @Query(value = "SELECT * FROM review WHERE customer_id=:id", nativeQuery = true)
     List<Review> getAllReviewsByCustomer(@Param("id")String customer_id);
+
+    @Query(value = "SELECT COUNT(*)>0 FROM review WHERE review_id=:id", nativeQuery = true)
+    Boolean isReviewExists(@Param("id")String review_id);
 }

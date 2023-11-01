@@ -35,4 +35,7 @@ public interface ProductRepository extends JpaRepository<Product, String> {
 
     @Query(value = "SELECT * FROM product", nativeQuery = true)
     List<Product> getAllProducts();
+
+    @Query(value = "SELECT COUNT(*)>0 FROM product WHERE product_id=:id", nativeQuery = true)
+    Boolean isProductExists(@Param("id")String product_id);
 }

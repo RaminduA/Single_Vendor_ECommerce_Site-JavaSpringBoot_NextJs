@@ -29,4 +29,7 @@ public interface OrderRepository extends JpaRepository<Order, String> {
 
     @Query(value = "SELECT * FROM orders WHERE customer_id=:id", nativeQuery = true)
     List<Order> getAllOrdersByCustomer(@Param("id")String customer_id);
+
+    @Query(value = "SELECT COUNT(*)>0 FROM orders WHERE order_id=:id", nativeQuery = true)
+    Boolean isOrderExists(@Param("id")String order_id);
 }

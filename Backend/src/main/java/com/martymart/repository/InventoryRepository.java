@@ -29,4 +29,7 @@ public interface InventoryRepository extends JpaRepository<Inventory, String> {
 
     @Query(value = "SELECT * FROM inventory", nativeQuery = true)
     List<Inventory> getAllInventories();
+
+    @Query(value = "SELECT COUNT(*)>0 FROM inventory WHERE inventory_id=:id", nativeQuery = true)
+    Boolean isInventoryExists(@Param("id")String inventory_id);
 }

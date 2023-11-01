@@ -32,4 +32,7 @@ public interface MessageRepository extends JpaRepository<Message, String> {
 
     @Query(value = "SELECT * FROM message WHERE receiver_id=:id", nativeQuery = true)
     List<Message> getAllMessagesByReceiver(@Param("id")String receiver_id);
+
+    @Query(value = "SELECT COUNT(*)>0 FROM message WHERE message_id=:id", nativeQuery = true)
+    Boolean isMessageExists(@Param("id")String message_id);
 }
